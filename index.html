@@ -8,30 +8,42 @@
     <style>
         body {
             font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
-            background-color: #1a1a1a; /* 다크 모드 배경 */
+            background-color: #1a1a1a;
             color: #ffffff;
             display: flex;
             flex-direction: column;
             align-items: center;
-            justify-content: center;
-            min-height: 100vh;
+            min-height: 100vh; /* 화면 전체 높이 사용 */
             margin: 0;
             text-align: center;
             padding: 20px;
+            box-sizing: border-box; /* 패딩이 전체 크기에 포함되도록 설정 */
         }
-        /* 로고 이미지 스타일 */
+
+        /* ★ 핵심 수정: 콘텐츠를 감싸는 중앙 정렬용 컨테이너 */
+        .content-wrapper {
+            flex: 1; /* 남은 빈 공간을 모두 차지함 */
+            display: flex;
+            flex-direction: column; /* 세로 정렬 */
+            justify-content: center; /* 수직 중앙 정렬 */
+            align-items: center; /* 수평 중앙 정렬 */
+            width: 100%;
+        }
+
         .main-logo {
-            max-width: 80%; /* 모바일에서 화면 넘침 방지 */
-            width: 350px;   /* PC에서 보일 적당한 크기 */
+            max-width: 80%;
+            width: 350px;
             height: auto;
             margin-bottom: 1rem;
         }
+
         p.slogan {
             font-size: 1.2rem;
             color: #aaaaaa;
             margin-bottom: 3rem;
             font-weight: 300;
         }
+
         .contact-btn {
             background-color: transparent;
             border: 1px solid #444;
@@ -42,13 +54,15 @@
             text-decoration: none;
             transition: 0.3s;
         }
+
         .contact-btn:hover {
             background-color: #ffffff;
             color: #000000;
             border-color: #ffffff;
         }
+
         footer {
-            margin-top: auto;
+            /* margin-top: auto; <- 이 속성 대신 위쪽 content-wrapper의 flex: 1이 밀어내게 함 */
             border-top: 1px solid #333;
             padding-top: 20px;
             width: 100%;
@@ -57,17 +71,20 @@
             color: #666;
             line-height: 1.6;
         }
+
         footer a { color: #888; text-decoration: none; margin: 0 10px; }
         footer a:hover { color: #fff; text-decoration: underline; }
     </style>
 </head>
 <body>
 
-    <img src="logo.png" alt="mindseeder" class="main-logo">
-    
-    <p class="slogan">Let the seed grow into meaning, filling the mind.</p>
+    <div class="content-wrapper">
+        <img src="logo.png" alt="mindseeder" class="main-logo">
+        
+        <p class="slogan">Let the seed grow into meaning, filling the mind.</p>
 
-    <a href="mailto:support@mindseeder.io" class="contact-btn">Contact Support</a>
+        <a href="mailto:support@mindseeder.io" class="contact-btn">Contact Support</a>
+    </div>
 
     <footer>
         <div style="margin-bottom: 15px;">
