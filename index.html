@@ -5,9 +5,8 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>mindseeder - AI & Game Lab</title>
     <link rel="icon" type="image/png" href="favicon.png">
-    <style>
+<style>
         body {
-            /* 기본 폰트 설정 */
             font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
             background-color: #1a1a1a;
             color: #ffffff;
@@ -19,6 +18,9 @@
             text-align: center;
             padding: 20px;
             box-sizing: border-box;
+            
+            /* ★ 추가: 배경에 은은한 중앙 조명 효과 (Vignette) */
+            background: radial-gradient(circle at center, #2a2a2a 0%, #111111 100%);
         }
 
         .content-wrapper {
@@ -32,46 +34,50 @@
 
         .main-logo {
             max-width: 80%;
-            width: 350px;
+            width: 380px; /* 로고 크기 약간 키움 */
             height: auto;
-            margin-bottom: 2rem; /* 로고와 텍스트 사이 간격 확보 */
+            margin-bottom: 2.5rem;
+            /* ★ 추가: 로고가 배경에서 더 튀어나와 보이게 그림자 추가 */
+            filter: drop-shadow(0 0 15px rgba(255, 255, 255, 0.1));
         }
 
-        /* ★ 디자인 핵심: 슬로건 스타일링 */
         p.slogan {
             font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
-            font-size: 1.1rem; /* 글자 크기 살짝 조정 */
-            color: #888888;    /* 기본 문장은 차분한 회색 */
-            margin-bottom: 3rem;
+            font-size: 1.3rem; /* ★ 폰트 크기 키움 (가독성 확보) */
+            color: #cccccc;    /* ★ 회색을 훨씬 밝게 수정 (#888 -> #ccc) */
+            margin-bottom: 3.5rem;
             font-weight: 300;
             letter-spacing: 0.5px;
-            line-height: 1.8;  /* ★ 행간을 넓혀서 시(Poem)처럼 보이게 함 */
+            line-height: 1.8;
         }
 
-        /* 마지막 문장 강조용 클래스 */
         .highlight-text {
-            display: block;    /* 줄바꿈 효과와 동시에 여백 통제 */
-            margin-top: 15px;  /* 앞 문장들과 거리두기 */
-            color: #ffffff;    /* 완전한 흰색으로 강조 */
-            font-weight: 500;  /* 살짝 두껍게 */
-            font-size: 1.2rem; /* 살짝 크게 */
+            display: block;
+            margin-top: 20px;
+            color: #ffffff;
+            font-weight: 600; /* 두께감 강화 */
+            font-size: 1.5rem; /* 강조 문구 더 크게 */
+            text-shadow: 0 0 10px rgba(255, 255, 255, 0.3); /* 은은한 빛 */
         }
 
+        /* ★ 버튼 디자인 전면 수정 */
         .contact-btn {
-            background-color: transparent;
-            border: 1px solid #444;
+            background: linear-gradient(45deg, #7b2cbf, #ff9e00); /* 브랜드 컬러 그라데이션 */
+            border: none;
             color: #fff;
-            padding: 12px 30px;
-            font-size: 1rem;
-            border-radius: 5px;
+            padding: 14px 40px; /* 버튼 크기 확대 */
+            font-size: 1.1rem;
+            font-weight: 600;
+            border-radius: 50px; /* 둥근 알약 모양 */
             text-decoration: none;
-            transition: 0.3s;
+            transition: transform 0.2s, box-shadow 0.2s;
+            box-shadow: 0 4px 15px rgba(123, 44, 191, 0.4); /* 그림자로 입체감 */
         }
 
         .contact-btn:hover {
-            background-color: #ffffff;
-            color: #000000;
-            border-color: #ffffff;
+            transform: translateY(-2px); /* 마우스 올리면 살짝 떠오름 */
+            box-shadow: 0 6px 20px rgba(255, 158, 0, 0.5); /* 그림자 강화 */
+            color: #fff;
         }
 
         footer {
@@ -79,12 +85,12 @@
             padding-top: 20px;
             width: 100%;
             max-width: 600px;
-            font-size: 0.8rem;
-            color: #666;
+            font-size: 0.85rem; /* 푸터 글씨도 살짝 키움 */
+            color: #777;
             line-height: 1.6;
         }
 
-        footer a { color: #888; text-decoration: none; margin: 0 10px; }
+        footer a { color: #999; text-decoration: none; margin: 0 10px; transition: color 0.2s; }
         footer a:hover { color: #fff; text-decoration: underline; }
     </style>
 </head>
@@ -100,7 +106,7 @@
             <span class="highlight-text">Planting Ideas, Growing Values with AI.</span>
         </p>
 
-        <a href="mailto:support@mindseeder.io" class="contact-btn">Contact Support</a>
+        <a href="mailto:support@mindseeder.io" class="contact-btn">Get in Touch</a>
     </div>
 
     <footer>
